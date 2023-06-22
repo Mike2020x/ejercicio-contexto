@@ -1,0 +1,23 @@
+/* .container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  } */
+  .candidato{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  

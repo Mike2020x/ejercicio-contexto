@@ -1,0 +1,2 @@
+export const AGREGAR_VOTO = 'AGREGAR_VOTO';
+export const CAMBIAR_FILTRO = 'CAMBIAR_FILTRO';

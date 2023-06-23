@@ -1,15 +1,15 @@
-import { useVotacionContext } from '../../store';
-import "./TotalVotos.css"
-export default function TotalVotos() {
-    const { state } = useVotacionContext();
-    const { votos } = state;
+import { useVoting } from '../../store/';
+
+const TotalVotos = () => {
+    const { state } = useVoting();
+    const { totalVotos } = state;
 
     return (
-        <div className='total-votos'>
+        <div>
             <h2>Total de Votos</h2>
-            <p>{votos.length}</p>
+            <p>{totalVotos}</p>
         </div>
     );
-}
+};
 
-
+export default TotalVotos;

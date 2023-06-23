@@ -4,15 +4,16 @@ import VotosIndividuales from './components/votosIndividuales/VotosIndividuales'
 import Filtro from './components/filtro/filtro';
 import { VotacionProvider } from './store/';
 import "./App.css"
+
 const App = () => {
   return (
     <VotacionProvider>
       <div className="container">
         <div className="candidatos">
-          <Candidato nombre="Candidato 1" />
-          <Candidato nombre="Candidato 2" />
-          <Candidato nombre="Candidato 3" />
-          <Candidato nombre="Candidato 4" />
+          <Candidato />
+          <Candidato />
+          <Candidato />
+          <Candidato />
         </div>
         <div className="layout">
           <div className="filtro">

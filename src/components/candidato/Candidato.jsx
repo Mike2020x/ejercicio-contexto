@@ -1,19 +1,24 @@
-import { useVotacionContext } from '../../store';
+import { useVoting } from '../../store/';
 import "./Candidato.css"
-// eslint-disable-next-line react/prop-types
-export default function Candidato({ nombre }) {
-    const { agregarVoto } = useVotacionContext();
+const Candidato = () => {
+    const { state, dispatch } = useVoting();
 
-    const handleVoto = () => {
-        agregarVoto(nombre);
+    const { candidates } = state;
+
+    const handleVoteClick = (candidateId) => {
+        dispatch({ type: 'INCREMENT_VOTE', payload: { candidateId } });
     };
 
     return (
         <div className='candidato'>
-            <h2>{nombre}</h2>
-            <button onClick={handleVoto}>Votar</button>
+            {candidates.map((candidate) => (
+                <div key={candidate.id} className='candidato-item'>
+                    <h2 className='candidato-nombre'>{candidate.name}</h2>
+                    <button className='candidato-btn' onClick={() => handleVoteClick(candidate.id)}>Votar</button>
+                </div>
+            ))}
         </div>
     );
-}
+};
 
-
+export default Candidato;

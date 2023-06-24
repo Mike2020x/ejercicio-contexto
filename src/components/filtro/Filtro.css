@@ -1,19 +1,15 @@
+*/ Estilos para el componente Filtro */
 .filtro {
-    padding: 20px;
-    font-size: 20px;
-  }
-  
-  h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.filtro select {
+  padding: 5px 10px;
+  font-size: 16px;
+}

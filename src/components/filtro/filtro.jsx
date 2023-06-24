@@ -1,25 +1,12 @@
-import { useVotacionContext } from '../../store';
+import { useVoting } from '../../store/';
 import "./Filtro.css"
+const Filtro = () => {
+    const { state, dispatch } = useVoting();
+    const { showResultType } = state;
 
-export default function Filtro() {
-    const { state, cambiarFiltro } = useVotacionContext();
-    const { filtro } = state;
-
-    const handleMostrarPorcentaje = (event) => {
-        cambiarFiltro({ ...filtro, mostrarPorcentaje: event.target.checked });
-    };
-
-    const handleSeleccionarCandidato = (event) => {
-        const candidato = event.target.value;
-        let candidatosSeleccionados = filtro.candidatosSeleccionados;
-
-        if (event.target.checked) {
-            candidatosSeleccionados = [...candidatosSeleccionados, candidato];
-        } else {
-            candidatosSeleccionados = candidatosSeleccionados.filter((c) => c !== candidato);
-        }
-
-        cambiarFiltro({ ...filtro, candidatosSeleccionados });
+    const handleResultTypeChange = e => {
+        const resultType = e.target.value;
+        dispatch({ type: 'SET_RESULT_TYPE', payload: { resultType } });
     };
 
     return (
@@ -27,53 +14,26 @@ export default function Filtro() {
             <h2>Filtro</h2>
             <div>
                 <label>
-                    Mostrar porcentaje:
                     <input
-                        type="checkbox"
-                        checked={filtro.mostrarPorcentaje}
-                        onChange={handleMostrarPorcentaje}
+                        type="radio"
+                        value="total"
+                        checked={showResultType === 'total'}
+                        onChange={handleResultTypeChange}
                     />
-                </label>
-            </div>
-            <div>
-                <h4>Seleccionar candidatos:</h4>
-                <label>
-                    Candidato 1:
-                    <input
-                        type="checkbox"
-                        value="Candidato 1"
-                        checked={filtro.candidatosSeleccionados.includes('Candidato 1')}
-                        onChange={handleSeleccionarCandidato}
-                    />
+                    Resultado Total
                 </label>
                 <label>
-                    Candidato 2:
                     <input
-                        type="checkbox"
-                        value="Candidato 2"
-                        checked={filtro.candidatosSeleccionados.includes('Candidato 2')}
-                        onChange={handleSeleccionarCandidato}
+                        type="radio"
+                        value="percentage"
+                        checked={showResultType === 'percentage'}
+                        onChange={handleResultTypeChange}
                     />
-                </label>
-                <label>
-                    Candidato 3:
-                    <input
-                        type="checkbox"
-                        value="Candidato 3"
-                        checked={filtro.candidatosSeleccionados.includes('Candidato 3')}
-                        onChange={handleSeleccionarCandidato}
-                    />
-                </label>
-                <label>
-                    Candidato 4:
-                    <input
-                        type="checkbox"
-                        value="Candidato 4"
-                        checked={filtro.candidatosSeleccionados.includes('Candidato 4')}
-                        onChange={handleSeleccionarCandidato}
-                    />
+                    Resultado en Porcentaje
                 </label>
             </div>
         </div>
     );
-}
+};
+
+export default Filtro;

@@ -1,16 +1,22 @@
 import { useVoting } from '../../store/';
+import "./Candidato.css"
+const Candidato = () => {
+    const { state, dispatch } = useVoting();
 
-const Candidato = ({ nombre, candidatoId }) => {
-    const { dispatch } = useVoting();
+    const { candidates } = state;
 
-    const handleVoteClick = () => {
-        dispatch({ type: 'INCREMENT_VOTE', payload: { candidateId: candidatoId } });
+    const handleVoteClick = (candidateId) => {
+        dispatch({ type: 'INCREMENT_VOTE', payload: { candidateId } });
     };
 
     return (
-        <div>
-            <h2>{nombre}</h2>
-            <button onClick={handleVoteClick}>Votar</button>
+        <div className='candidato'>
+            {candidates.map((candidate) => (
+                <div key={candidate.id} className='candidato-item'>
+                    <h2 className='candidato-nombre'>{candidate.name}</h2>
+                    <button className='candidato-btn' onClick={() => handleVoteClick(candidate.id)}>Votar</button>
+                </div>
+            ))}
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useVoting } from '../../store/';
-
+import "./TotalVotos.css"
 const TotalVotos = () => {
     const { state } = useVoting();
     const { totalVotos } = state;

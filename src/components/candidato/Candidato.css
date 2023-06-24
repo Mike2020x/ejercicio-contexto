@@ -1,23 +1,20 @@
-/* .container {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  } */
-  .candidato{
-    display: flex;
-    flex-direction: column;
-    
-  }
-  h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
+/* Estilos para el componente Candidato */
+.candidato {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  gap: 10rem;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.candidato h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.candidato button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+

@@ -5,10 +5,10 @@ const VotacionContext = createContext();
 const initialState = {
     totalVotos: 0,
     candidates: [
-        { id: 1, name: "Candidato 1", votes: 0, percentage: 0 },
-        { id: 2, name: "Candidato 2", votes: 0, percentage: 0 },
-        { id: 3, name: "Candidato 3", votes: 0, percentage: 0 },
-        { id: 4, name: "Candidato 4", votes: 0, percentage: 0 }
+        { id: 1, name: "Michael", votes: 0, percentage: 0 },
+        { id: 2, name: "Juan", votes: 0, percentage: 0 },
+        { id: 3, name: "Felipe", votes: 0, percentage: 0 },
+        { id: 4, name: "Fernando", votes: 0, percentage: 0 }
     ],
     showResultType: 'total'
 };

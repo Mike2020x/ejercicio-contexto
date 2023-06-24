@@ -10,10 +10,7 @@ const App = () => {
     <VotacionProvider>
       <div className="container">
         <div className="candidatos">
-          <Candidato />
-          <Candidato />
-          <Candidato />
-          <Candidato />
+          <Candidato className="candidatos" />
         </div>
         <div className="layout">
           <div className="filtro">

@@ -1,5 +1,5 @@
 import { useVoting } from '../../store/';
-
+import "./Filtro.css"
 const Filtro = () => {
     const { state, dispatch } = useVoting();
     const { showResultType } = state;
@@ -10,7 +10,7 @@ const Filtro = () => {
     };
 
     return (
-        <div>
+        <div className='filtro'>
             <h2>Filtro</h2>
             <div>
                 <label>

@@ -1,13 +1,7 @@
 .container{
     width: 100vw;
         height: 100vh;
-    .candidatos{
-        display: flex;
-        gap: 1rem;
-        width: 100vw;
-        justify-content: space-around;
-        align-items: center;
-      } 
+    
       .layout{
         display: flex;
         gap: 1rem;
@@ -15,11 +9,18 @@
         .filtro{
             width: 20%;
             height: 80vh;
-        }
+            display: block
+                }
         .votos{
-            display: block;
-            width: 80%;
-
+            width: 80%; 
         }
       }
 }
+
+.candidato{
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    
+  } 

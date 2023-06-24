@@ -1,5 +1,5 @@
 import { useVoting } from '../../store/';
-
+import "./VotosIndividuales.css"
 const VotosIndividuales = () => {
     const { state } = useVoting();
     const { candidates, showResultType } = state;
